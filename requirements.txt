@@ -1,0 +1,5 @@
+anthropic==0.19.2
+pdf2image==1.17.0
+pdfplumber==0.11.0
+pytesseract==0.3.10
+streamlit==1.32.0
