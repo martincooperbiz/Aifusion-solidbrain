@@ -30,13 +30,6 @@ def login():
         else:
             st.error("Invalid username or password. Please try again.")
 
-# Function to display authenticated content
-def main():
-    if "logged_in" not in st.session_state or not st.session_state.logged_in:
-        login()
-    else:
-        st.title("Authenticated Content")
-
 # Set up the Anthropic API client
 anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
 client = anthropic.Anthropic(api_key=anthropic_api_key)
@@ -162,4 +155,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
