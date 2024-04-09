@@ -30,9 +30,10 @@ def login():
         else:
             st.error("Invalid username or password. Please try again.")
 
+
 # Set up the Anthropic API client
 anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
-client = anthropic.Anthropic(api_key=anthropic_api_key)
+
 
 # Function to check if PDF contains searchable text
 def is_searchable_pdf(pdf_bytes):
