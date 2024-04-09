@@ -25,7 +25,7 @@ def extract_text_from_pdf(pdf_bytes):
     return full_text
 
 # Function to extract text from an image using OCR
-def extract_text_from_image(img_data, lang='fra'):
+def extract_text_from_image(img_data, lang='ara'):
     if isinstance(img_data, bytes):
         img = Image.open(io.BytesIO(img_data))
     elif isinstance(img_data, Image.Image):
@@ -38,7 +38,7 @@ def extract_text_from_image(img_data, lang='fra'):
 
 
 def main():
-    st.title("French OCR with Tesseract")
+    st.title("Arabic OCR with Tesseract")
 
     # File upload
     uploaded_file = st.file_uploader("Upload PDF or image", type=["pdf", "png", "jpg", "jpeg"])
