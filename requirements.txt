@@ -5,3 +5,4 @@ pdf2image
 pdfplumber
 pytesseract
 pyperclip
+poppler-utils
