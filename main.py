@@ -8,6 +8,35 @@ import pdfplumber
 import pytesseract
 import pyperclip  # Import the pyperclip library
 
+# Function to authenticate users
+def authenticate(username, password):
+    valid_usernames = st.secrets["valid_usernames"]
+    valid_passwords = st.secrets["valid_passwords"]
+
+    if username in valid_usernames and password == valid_passwords[valid_usernames.index(username)]:
+        return True
+    else:
+        return False
+
+# Function to display login form
+def login():
+    st.title("Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if authenticate(username, password):
+            st.session_state.logged_in = True
+            st.success("Login successful!")
+        else:
+            st.error("Invalid username or password. Please try again.")
+
+# Function to display authenticated content
+def main():
+    if "logged_in" not in st.session_state or not st.session_state.logged_in:
+        login()
+    else:
+        st.title("Authenticated Content")
+
 # Set up the Anthropic API client
 anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
 client = anthropic.Anthropic(api_key=anthropic_api_key)
@@ -130,6 +159,9 @@ def main():
             os.remove(uploaded_file.name)
         except FileNotFoundError:
             pass
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()
