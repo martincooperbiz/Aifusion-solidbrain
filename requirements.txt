@@ -4,4 +4,5 @@ pdfplumber==0.11.0
 pyperclip==1.8.2
 pytesseract==0.3.10
 streamlit==1.32.0
+PyMuPDF==1.18.17
 
