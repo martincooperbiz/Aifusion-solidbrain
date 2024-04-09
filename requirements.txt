@@ -1,8 +1,7 @@
-streamlit
-anthropic
-pillow
-pdf2image
-pdfplumber
-pytesseract
-pyperclip
-poppler-utils
+streamlit==1.33.0
+anthropic==0.23.1
+pdf2image==1.17.0
+pdfplumber==0.11.0
+pillow==10.3.0
+pytesseract==0.3.10
+pyperclip==1.8.2
