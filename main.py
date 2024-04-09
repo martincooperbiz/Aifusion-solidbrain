@@ -33,6 +33,7 @@ def login():
 
 # Set up the Anthropic API client
 anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
+client = anthropic.Anthropic(api_key=anthropic_api_key)
 
 
 # Function to check if PDF contains searchable text
